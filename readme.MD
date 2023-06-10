@@ -29,6 +29,8 @@ and set it to project_dir/venv/bin/python
    4. Verify these combos with Alice?
 9. Instead of CSV output, add HTML output.  In the HTML, instead of printing the 2nd column in the huge file, just highlight the search terms in RED or something.  Have fun with it.
    1. I'm going to oversimplify this probably, but really you could just write:
-```<html><body><table><tr><th>search term></th><th>result</th></tr>
+```
+ <html><body><table><tr><th>search term></th><th>result</th></tr>
  then for every term that is a match: <tr><td>term</td><td>this is <span class="highlight">all</span> the text</td></tr>
- finally: </table></body></html>```
+ finally: </table></body></html>
+ ```

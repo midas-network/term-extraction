@@ -1,0 +1,8 @@
+.DS_Store
+*.iml
+.idea
+/venv
+/data
+/output-te
+__pycache__
+counts.csv

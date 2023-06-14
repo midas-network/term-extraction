@@ -15,6 +15,12 @@ def main():
         content = requests.get(url, stream=True).content
         out_file.write(content)
 
+    url = "https://members.midasnetwork.us/midascontacts/query/projects/visualizer/all?apiKey=a23afe9bce62d311a8948609e347d76a"
+
+    with open('data_sources/projects.json', 'wb') as out_file:
+        content = requests.get(url, stream=True).content
+        out_file.write(content)
+
 
 if __name__ == "__main__":
     main()

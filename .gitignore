@@ -3,6 +3,7 @@
 .idea
 /venv
 /data
+/data_sources
 /output-te
 __pycache__
 counts.csv

@@ -313,8 +313,8 @@ def unstemword(stemmed_word, unstem_method=UnstemMethod.SELECT_MOST_FREQUENT):
         return stemmed_word
 
 
-def build_corpus_words_only(field_set, do_stemming, do_remove_common):
-    documents = pd.read_json('data_sources/papers.json')
+def build_corpus_words_only(datasource, field_set, do_stemming, do_remove_common):
+    documents = pd.read_json('data_sources/' + datasource + '.json')
     text_list = []
     for index, row in documents.iterrows():
         all_document_text_extracted = ""
@@ -330,7 +330,7 @@ def build_corpus_words_only(field_set, do_stemming, do_remove_common):
                 field_text = remove_common(field_text, do_remove_common)
                 all_document_text_extracted += " " + field_text + " "
 
-        if 'paperAbstract' in field_set:
+        if 'grantAbstract' in field_set or 'paperAbstract' in field_set:
             all_document_text_extracted = title + " " + all_document_text_extracted
         list_of_words = remove_stop_words_and_do_stemming(all_document_text_extracted, do_stemming, do_remove_common)
         text_list.append(re.sub(r"(©|elsevier|copyright).*", "", ' '.join(list_of_words)))
